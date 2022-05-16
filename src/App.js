@@ -1,7 +1,15 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Board from "./pages/Board";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/board" element={<Board />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
