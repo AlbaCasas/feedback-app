@@ -1,4 +1,5 @@
 import React from "react";
+import Badge from "../Badge";
 import Button from "../Button";
 
 const Nav = () => {
@@ -19,6 +20,7 @@ const Nav = () => {
             <option value="value3">Value 3</option>
           </select>
         </div>
+        <Badge>112</Badge>
       </div>
 
       <Button>Add feedback</Button>
