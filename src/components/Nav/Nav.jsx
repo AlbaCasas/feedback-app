@@ -1,16 +1,30 @@
 import React from "react";
-import Badge from "../Badge";
-import Button from "../Button";
+import cls from "classnames";
 
-const Nav = () => {
+import Badge from "../Badge";
+import Box from "../Box/Box";
+import Button from "../Button";
+import Row from "../Row";
+import Text from "../Text";
+
+const Nav = ({ className }) => {
   return (
-    <div className="h-[72px] p-3 w-full bg-darkBlue rounded-lg flex items-center justify-between">
-      <div className="flex items-center gap-8">
-        <span className="font-bold text-lg text-white">6 suggestions</span>
-        <div>
-          <span className="text-sm text-white ">Sort by:</span>
+    <Row
+      className={cls(
+        "h-[72px] p-3 w-full bg-darkBlue rounded-lg items-center justify-between",
+        className
+      )}
+    >
+      <Row className="items-center gap-8">
+        <Text subheading className="text-white">
+          6 suggestions
+        </Text>
+        <Box>
+          <Text caption className="text-white">
+            Sort by:
+          </Text>
           <select
-            className="text-sm bg-transparent font-bold text-white border-none outline-0  "
+            className="text-sm bg-transparent font-bold text-white border-none outline-0"
             name="select"
           >
             <option value="value1">Value 1</option>
@@ -19,12 +33,12 @@ const Nav = () => {
             </option>
             <option value="value3">Value 3</option>
           </select>
-        </div>
+        </Box>
         <Badge>112</Badge>
-      </div>
+      </Row>
 
       <Button>Add feedback</Button>
-    </div>
+    </Row>
   );
 };
 
