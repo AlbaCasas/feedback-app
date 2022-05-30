@@ -1,26 +1,32 @@
 import React from "react";
 import Badge from "../Badge";
 import Button from "../Button";
+import Select from "../Select";
+import Text from "../Text";
 
 const Nav = () => {
   return (
-    <div className="h-[72px] p-3 w-full bg-darkBlue rounded-lg flex items-center justify-between">
+    <div className="h-[72px] p-3 w-full bg-darkBlue sm:rounded-lg flex items-center justify-between">
       <div className="flex items-center gap-8">
-        <span className="font-bold text-lg text-white">6 suggestions</span>
+        <Text title="title" className="text-white hidden sm:block ">
+          6 suggestions
+        </Text>
         <div>
-          <span className="text-sm text-white ">Sort by:</span>
-          <select
-            className="text-sm bg-transparent font-bold text-white border-none outline-0  "
+          <Text regular="regular" className="text-white ">
+            Sort by:
+          </Text>
+          <Select
+            className=" border-none outline-0 bg-darkBlue text-white "
             name="select"
           >
-            <option value="value1">Value 1</option>
-            <option value="value2" selected>
-              Value 2
+            <option value="" selected disabled hidden>
+              All
             </option>
+            <option value="value1">Value 1</option>
+            <option value="value2">Value 2</option>
             <option value="value3">Value 3</option>
-          </select>
+          </Select>
         </div>
-        <Badge>112</Badge>
       </div>
 
       <Button>Add feedback</Button>
